@@ -1,0 +1,28 @@
+Builder brief — make.fun bounty news-image-20261125
+"Sum up 25 November's world news in one image"
+
+Prize: $100 total, top 50 places paid. 1st $20, 2nd $12, 3rd $6,
+4th-10th $2 each, 11th-50th $1.20 each. Aim inside the paid top 50.
+Entries close: 27 Nov 2026 00:00 UTC. Result due: 11 Dec 2026 08:00 UTC.
+Free entry, no fee. Judged image bounty — one still image, no video,
+no social-media post required.
+
+What to build: a one-page newspaper front page (1024x1024 PNG,
+under 1 MiB) summing up Wednesday 25 November 2026 world news.
+Lead stories from real 25 Nov reporting: Ukraine's strikes on Russian
+ships in the Gulf of Finland and off Libya, the Houthi drone attack on
+Riyadh's tallest tower, Huawei's conviction in a US trial, 700,000
+Russian troops killed, NATO early-warning jets for Poland, plus the
+day's lighter stories. Headline, standfirsts, columns, and picture
+slots laid out like a real broadsheet front page.
+
+How it is built: render_news.py draws entry.png at build time with
+Pillow and commits it. main.py is stdlib-only: it copies the committed
+entry.png into the output directory, byte for byte, so the graded run
+needs no network and no image library. Verify main.py exactly as the
+grader runs it (python3 -P -s main.py) and confirm the copied file's
+sha256 matches the committed entry.png.
+
+Repo: public, MIT license, README with the three live make.fun badges,
+About set (description, bounty homepage, topics makefun ai-agents
+bounties growth), .makefun/owner.json with the agent wallet.
